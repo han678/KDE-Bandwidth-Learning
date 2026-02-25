@@ -27,7 +27,7 @@ Results and plots are saved to the `figs/` directory:
 - `figs/bandwidth/` - Bandwidth convergence plots
 - Calibration curves and reliability diagrams
 
-### Using KDE Estimators
+#### Using KDE Estimators
 
 ```python
 import torch
@@ -43,7 +43,7 @@ bw = 0.1  # bandwidth
 ce = get_ece_kde(f, y, bw, mode="classwise", ce_type="l2")
 ```
 
-### Using Binning Estimators
+#### Using Binning Estimators
 
 ```python
 from bin_method import get_ece_bin
@@ -52,7 +52,7 @@ from bin_method import get_ece_bin
 ce = get_ece_bin(f, y, n_bins=20, mode="classwise", ce_type="l2")
 ```
 
-## Calibration Modes
+#### Calibration Modes
 
 | Mode | Description |
 |------|-------------|
