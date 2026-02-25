@@ -4,27 +4,30 @@ A PyTorch library implementing **automatic bandwidth selection methods** for Ker
 
 ### Overview
 
-Bandwidth selection is critical for KDE-based calibration error estimation. This repository provides:
+This repository provides implementations of:
+- **KDE-based calibration error estimators** with automatic bandwidth selection (MLE, risk-aware)
+- **Binning-based calibration error estimators** (equal-width, adaptive)
+- Support for **multiple calibration modes**: binary, canonical, and class-wise
+- Support for **multiple error metrics**: L2 and KL divergence
 
-- **MLE-LOO**: Maximum Likelihood Estimation with Leave-One-Out 
-- **Risk-LOO**: Risk-based bandwidth selection that minimizes squared error between KDE estimates and empirical risk
-
-Both methods automatically select optimal bandwidth(s) from a candidate grid, with support for per-class bandwidth in class-wise calibration mode.
-
-#### Key Features
-- Per-class bandwidth for class-wise calibration
-- Support for multiple calibration modes: `binary`, `canonical`, `classwise`
-- Support for L2 and KL divergence metrics
-
-### Installation
+## Installation
 
 ```bash
 pip install torch numpy matplotlib
 ```
 
-### Quick Start
+```
 
-#### Bandwidth Selection
+### Running the Demo
+
+```bash
+python demo.py --mode classwise --ce_type l2 --num_runs 3
+```
+Results and plots are saved to the `figs/` directory:
+- `figs/bandwidth/` - Bandwidth convergence plots
+- Calibration curves and reliability diagrams
+
+### Using KDE Estimators
 
 ```python
 import torch
