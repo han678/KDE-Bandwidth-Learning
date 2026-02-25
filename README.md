@@ -1,8 +1,8 @@
-# Calibration Error Estimation with KDE
+## Bandwidth Selection in Kernel Density Estimation for Model Calibration
 
 A PyTorch library for estimating calibration error in machine learning models using Kernel Density Estimation (KDE) and binning methods.
 
-## Overview
+### Overview
 
 This repository provides implementations of:
 - **KDE-based calibration error estimators** with automatic bandwidth selection (MLE, risk-aware)
@@ -10,7 +10,7 @@ This repository provides implementations of:
 - Support for **multiple calibration modes**: binary, canonical, and class-wise
 - Support for **multiple error metrics**: L2 and KL divergence
 
-## Installation
+### Installation
 
 ```bash
 pip install torch numpy matplotlib
@@ -59,10 +59,3 @@ ce = get_ece_bin(f, y, n_bins=20, mode="classwise", ce_type="l2")
 | `binary` | Binary calibration (top-class confidence) |
 | `canonical` | Canonical calibration (full probability vector) |
 | `classwise` | Class-wise calibration (per-class probabilities) |
-
-## Error Metrics
-
-| Metric | Description |
-|--------|-------------|
-| `l2` | Squared L2 distance |
-| `kl` | KL divergence |
