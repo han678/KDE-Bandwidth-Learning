@@ -16,16 +16,20 @@ This repository provides implementations of:
 pip install torch numpy matplotlib
 ```
 
-### Running the Demo
+### Bandwidth Selection Methods
 
-```bash
-python demo.py --mode classwise --ce_type l2 --num_runs 3
-```
-Results and plots are saved to the `figs/` directory:
-- `figs/bandwidth/` - Bandwidth convergence plots
-- Calibration curves and reliability diagrams
+| Method | Description |
+|--------|-------------|
+| `MLE-loo` | Maximizes Leave-One-Out log-likelihood of the KDE |
+| `risk-loo` | Minimizes squared error between KDE risk estimate and empirical risk |
 
-### Using KDE Estimators
+#### Calibration Modes
+
+| Mode | Description |
+|------|-------------|
+| `binary` | Binary calibration (top-class confidence) |
+| `canonical` | Canonical calibration (full probability vector) |
+| `classwise` | Class-wise calibration (per-class bandwidths) |
 
 ```python
 import torch
@@ -53,27 +57,11 @@ from kde.kde_estimators import get_ece_kde
 ce = get_ece_kde(f, y, bw, mode="classwise", ce_type="l2")
 ```
 
-#### Bandwidth Selection Methods
-
-| Method | Description |
-|--------|-------------|
-| `MLE-loo` | Maximizes Leave-One-Out log-likelihood of the KDE |
-| `risk-loo` | Minimizes squared error between KDE risk estimate and empirical risk |
-
-#### Calibration Modes
-
-| Mode | Description |
-|------|-------------|
-| `binary` | Binary calibration (top-class confidence) |
-| `canonical` | Canonical calibration (full probability vector) |
-| `classwise` | Class-wise calibration (per-class bandwidths) |
-
-#### Running Experiments
+### Running the Demo
 
 ```bash
 python demo.py --mode classwise --ce_type l2 --num_runs 3
 ```
-
-Results are saved to `figs/bandwidth/`:
-- Bandwidth convergence plots across sample sizes
+Results and plots are saved to the `figs/` directory:
+- `figs/bandwidth/` - Bandwidth convergence plots
 - Calibration curves and reliability diagrams
