@@ -10,12 +10,10 @@ This repository provides implementations of:
 - Support for **multiple calibration modes**: binary, canonical, and class-wise
 - Support for **multiple error metrics**: L2 and KL divergence
 
-## Installation
+### Installation
 
 ```bash
 pip install torch numpy matplotlib
-```
-
 ```
 
 ### Running the Demo
