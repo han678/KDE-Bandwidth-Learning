@@ -5,10 +5,10 @@ A PyTorch library for estimating calibration error in machine learning models us
 ### Overview
 
 This repository provides implementations of:
-- **KDE-based calibration error estimators** with automatic bandwidth selection (MLE, risk-aware)
+- **KDE-based calibration error estimators** with automatic bandwidth selection (MLE, risk-based)
 - **Binning-based calibration error estimators** (equal-width, adaptive)
 - Support for **multiple calibration modes**: binary, canonical, and class-wise
-- Support for **multiple error metrics**: L2 and KL divergence
+- Support for **multiple proper scoring rule**: L2 and KL divergence
 
 ### Installation
 
