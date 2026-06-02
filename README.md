@@ -65,3 +65,22 @@ python demo.py --mode classwise --ce_type l2 --num_runs 3
 Results and plots are saved to the `figs/` directory:
 - `figs/bandwidth/` - Bandwidth convergence plots
 - Calibration curves and reliability diagrams
+
+  
+#### Reference
+If you found this work or code useful, please cite:
+
+```
+@inproceedings{zhou2026bandwidth,
+title={Bandwidth Selection in Kernel Density Estimation for Model 
+Calibration},
+author={Han Zhou and Teodora Popordanoska and Matthew B. Blaschko},
+booktitle={Forty-Second Annual Conference on Uncertainty in Artificial 
+Intelligence},
+year={2026},
+url={https://openreview.net/forum?id=jAsavOjM1S}
+}
+```
+#### License
+
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
