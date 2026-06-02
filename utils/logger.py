@@ -4,6 +4,7 @@ mpl.use('Agg')
 import matplotlib.pyplot as plt
 import numpy as np
 
+
 __all__ = ['Logger', 'LoggerMonitor', 'savefig', 'closefig']
 
 def savefig(fname, dpi=None):
