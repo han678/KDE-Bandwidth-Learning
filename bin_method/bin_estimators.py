@@ -3,6 +3,7 @@ import torch.nn.functional as F
 from torch import Tensor
 from kde.utils import safe_x_log_y, EPS_PROB
 
+
 def canonical_calib_error(R: Tensor, f: Tensor, ce_type: str) -> Tensor:
     if ce_type == "l2":
         return torch.square(R - f).sum(dim=1).mean()
