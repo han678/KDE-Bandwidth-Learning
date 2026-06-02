@@ -6,6 +6,7 @@ import torch.nn.functional as F
 from torch import Tensor
 from typing import Union
 
+
 def empirical_risk(probs, targets, ce_type, mode="canonical", return_mean=True, return_matrix=False):
     N, K = probs.shape
     K_effective = 2 if K == 1 else K
